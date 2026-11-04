@@ -1,8 +1,10 @@
 def analyze_numbers(numbers):
     """Анализирует список чисел."""
+    if not all(isinstance(number, (int, float)) for number in numbers):
+        raise TypeError("Все элементы должны быть числами")
+
     if not numbers:
         return None
-
     return {
         "count": len(numbers),
         "sum": sum(numbers),
